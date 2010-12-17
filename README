@@ -1,0 +1,15 @@
+= Description
+  A plugin for BrowserCMS that replaces standard authentication with a
+  Kerberos based authentication system.
+
+= Dependencies
+  krb5_auth
+  rack-auth-kerberos
+
+= Installation
+  gem install kerberos-browsercms
+
+= Git Repo
+
+= Usage
+  # Make sure this is loaded -after- BrowserCMS loads its libraries.
