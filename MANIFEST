@@ -1,0 +1,7 @@
+* CHANGES
+* README
+* MANIFEST
+* Rakefile
+* kerberos-browsercms.gemspec
+* lib/cms/authentication/model.rb
+* test/test_kerberos_browsercms.rb
