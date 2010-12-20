@@ -4,12 +4,13 @@ module Cms
   module Authentication
     module Kerberos
       def authenticated?(password, realm = nil)
+        result = false
         krb5 = Krb5Auth::Krb5.new
         realm ||= krb5.get_default_realm
-        user = user.login + "@#{realm}"
+        user = login + "@#{realm}"
 
         begin
-          krb.get_init_creds_password(user, password)
+          krb5.get_init_creds_password(user, password)
         rescue Krb5Auth::Krb5::Exception => err
           case err.message
             when /client not found/i
@@ -23,9 +24,12 @@ module Cms
           if defined? logger
             logger.error "Krb5Auth::Krb5::Exception: #{err.message}"
           end
+        else
+          result = true
         ensure
           krb5.close
         end
+        return result
       end
     end
   end
