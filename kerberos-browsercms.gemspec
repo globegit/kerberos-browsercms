@@ -16,7 +16,6 @@ Gem::Specification.new do |spec|
   spec.extra_rdoc_files  = ['README', 'CHANGES', 'MANIFEST']
 
   spec.add_dependency('krb5_auth')
-  spec.add_dependency('rack-auth-kerberos')
 
   spec.description = <<-EOF
     The kerberos-browsercms gem overrides the standard BrowserCMS
